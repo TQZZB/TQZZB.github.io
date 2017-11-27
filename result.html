@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>班级小故事</title>
   <style>
+  @font-face {
+    font-family: lthj;
+    src:url("./fonts/lthjx.TTF") format("TrueType");
+  }
   body {
     padding: 0;
     margin: 0;
@@ -58,7 +62,7 @@
         var b = 2400
         var r = 600
         ctx.drawImage(qr, a, b, r, r)
-        ctx.font = "normal 180px"
+        ctx.font = "normal 180px lthj"
         ctx.fillStyle = "black"
         ctx.textBaseline = "top"
         for (var i = 0; i < text.length; ++i) {
