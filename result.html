@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>班级小故事</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.bootcss.com/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  <style>
+  @font-face {
+    font-family: lthj;
+    src:url("./fonts/lthjx.TTF") format("TrueType");
+  }
+  @font-face {
+    font-family: wwjh;
+    src:url("./fonts/wwjh.ttf") format("TrueType");
+  }
+  body {
+    padding: 0;
+    margin: 0;
+  }
+  #background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url(/images/background.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  #result, #replace, #resultpic {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    /*margin-top: 35%;
+    flex: 0 0 auto;
+    width: 80%;
+    margin-bottom: 8%;*/
+  }
+  </style>
+  <script>
+  $(document).ready(function () {
+    var cw = 2100
+    var ch = 3327
+
+    var bindex = Math.floor(Math.random() * 6) + 1
+    var tindex = Math.floor(Math.random() * 46)
+
+    var list = [["在真人CS中", "勇不可挡", "把班里的妹子", "都打哭了"], ["在剃了光头之后","发现自己的丑", "和发型", "并没有关系"], ["在阿甘截止前","终于刷满次数", "结果", "全被记录为", "交通工具"], ["每次在班里玩","狼人杀", "都会", "被首刀"], ["每次在班里玩","狼人杀", "都是", "上帝"], ["在这次奖学金","评比中", "又是", "玩得最多", "拿钱最多的"], ["作为浴室歌王","在班级同学的", "支持下", "必将成为", "校园十强"], ["做了四年","学生节班剧导演", "自己却", "始终没能上镜"], ["在实践中","和暗恋的妹子", "分到一组", "结果两人", "一起迷路了"], ["一定会成为","班里第一个", "结婚的人"], ["的作业拿去","给同学抄", "结果自己却被", "扣了分"], ["因为顺拐","成为军训时", "第一个", "被教官记住的人"], ["和班上的男生","去校园讲解", "结束的时候", "一个初中女生喊", "谢谢哥哥", "谢谢阿姨"], ["代表班级篮球队","从入学打到大四", "毕了业", "也没有小组出线"], ["成功追到了","隔壁班里", "最好看的", "妹子"], ["赶着最后一分钟","到了", "比赛场地", "却发现除了自己", "只有裁判"], ["丢了一张校园卡","蹭了班里同学", "一个月的饭"], ["每学期开学","都能吃到", "班里同学", "从各地带来的", "小吃"], ["的寝室曾经夜聊","到天亮", "然后一起去", "吃早点"], ["和班上的女生","去校园讲解", "结束的时候", "一个初中女生喊", "谢谢姐姐", "谢谢叔叔"], ["载班上的妹子去","新生舞会", "结果", "人车俱翻"], ["作为班长","每次班里同学", "来找他", "都会", "顺走一包零食"], ["总是寝室里","睡得最早", "起床最晚的", "那个"], ["背着全班同学的","手机", "刷阿甘", "三千米还是", "不及格"], ["在玩狼人杀时","首刀了辅导员", "连累宿舍", "被查了一个学期", "的寝"], ["白天带大家自习","晚上带大家排位", "带飞宿舍", "责无旁贷"], ["和班里几个同学","一起办了健身卡", "一月下来", "果然饿瘦了"], ["发动班里同学去","刷文素讲座", "自己却因", "呼噜太大", "而被赶了出去"], ["使全年级","每次一二九", "都会排练到很晚"], ["在一二九合唱中","总是", "脸最红的那个"], ["在考完试后","捶胸顿足", "班里同学便知道", "ｔａ又要考第一了"], ["为减肥办了一张", "游泳卡","到期的时候", "刚好可以请全班同学", "都去游一次"], ["打靶时","把一颗子弹", "打到了别人的", "靶子上", "自己却", "还是满分"], ["永远是班上的","第一名", "最粗壮的", "大腿"], ["大学过男生节","吃过班里所有", "女生送的", "早餐"], ["的寝室","每次检查卫生", "都能从桌缝里", "翻出袜子"], ["放假前开了","单身ｐａｒｔｙ", "开学时发现", "只有自己还是", "单身狗"], ["翘课被点名","三个室友", "同时答了到"], ["当了四年班委","还是没能", "当上班长"], ["每学期都立","不赶ｄｄｌ", "的ｆｌａｇ", "每个期末", "都被ｄｄｌ", "追着跑"], ["五点起床","用卷纸帮", "班里同学", "占了三排座"], ["上课被点名","全班同学都", "不约而同", "笑起来"], ["将在今年","在班里", "找到另一半"], ["在女生节中","自己包的饺子", "自己哭着吃完"], ["由于在足球赛中","表现优异", "被派去干扰", "对方球队的比赛"], ["喝醉后","曾抱着班长的腿", "放声大哭"]]
+
+    var canvas = document.getElementById('result')
+
+    var reg = new RegExp("(^|&)name=([^&]*)(&|$)");
+    var name = window.location.search.substr(1).match(reg);
+    if (name == null)
+      name = ""
+    else
+      name = decodeURIComponent(name[2])
+
+    var drawText = function (ctx, str, row) {
+      var width = (cw - ctx.measureText(str).width) / 2
+      ctx.fillText(str, width, 350 + row * 260);
+    }
+
+    var text = [name].concat(list[tindex])
+
+    if (canvas.getContext) {
+      var ctx = canvas.getContext('2d')
+      var qr = new Image()
+      qr.src = "/images/qr.png"
+      var img = new Image()
+      img.src = "/images/" + bindex + ".jpg"
+      img.onload = function () {
+        ctx.drawImage(img, 0, 0, cw, ch)
+        var a = 1150
+        var b = 2400
+        var r = 600
+        ctx.drawImage(qr, a, b, r, r)
+        ctx.font = "normal 180px lthj"
+        ctx.fillStyle = "black"
+        ctx.textBaseline = "top"
+        for (var i = 0; i < text.length; ++i) {
+          drawText(ctx, text[i], i)
+        }
+      }
+    } else {
+      $('#replace').attr("src", "/images/" + bindex + ".png")
+    }
+  })
+  </script>
+</head>
+<body>
+  <div id="background">
+    <canvas id="result" width="2100" height="3327">
+      <img id="replace" src="/images/load.jpg" />
+    </canvas>
+    <small class="form-text text-muted">请保存属于你的班级小故事。</small>
+  </div>
+</body>
+</html>
